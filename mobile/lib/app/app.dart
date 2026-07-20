@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'theme/app_theme.dart';
+import '../features/splash/presentation/splash_screen.dart';
 
 class ZeninShareApp extends StatelessWidget {
   const ZeninShareApp({super.key});
@@ -8,17 +10,8 @@ class ZeninShareApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ZeninShare',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('ZeninShare'),
-        ),
-        body: const Center(
-          child: Text(
-            'Welcome to ZeninShare',
-            style: TextStyle(fontSize: 22),
-          ),
-        ),
-      ),
+      theme: AppTheme.lightTheme,
+      home: const SplashScreen(),
     );
   }
 }

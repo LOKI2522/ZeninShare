@@ -4,8 +4,8 @@ class AppColors {
   AppColors._();
 
   // Brand Colors
-  static const Color primary = Color(0xFF2563EB);
-  static const Color secondary = Color(0xFF0EA5E9);
+  static const Color primary = Color.fromARGB(255, 5, 9, 16);
+  static const Color secondary = Color.fromARGB(255, 9, 13, 14);
 
   // Background Colors
   static const Color background = Color(0xFFF8FAFC);
