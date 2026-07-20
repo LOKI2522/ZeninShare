@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'theme/app_theme.dart';
-import '../features/splash/presentation/splash_screen.dart';
+import '../features/splash/presentation/pages/splash_screen.dart';
 
 class ZeninShareApp extends StatelessWidget {
   const ZeninShareApp({super.key});
