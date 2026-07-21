@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../create_room/presentation/pages/create_room_screen.dart';
+import '../../../join_room/presentation/pages/join_room_screen.dart';
+import '../../../history/presentation/pages/history_screen.dart';
+import '../../../settings/presentation/pages/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,7 +13,9 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "ZeninShare",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
       ),
@@ -50,9 +56,15 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 50),
 
+            // Send Files Button
             ElevatedButton.icon(
               onPressed: () {
-                // Navigate to Send Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CreateRoomScreen(),
+                  ),
+                );
               },
               icon: const Icon(Icons.upload_file),
               label: const Text("Send Files"),
@@ -64,9 +76,15 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
+            // Receive Files Button
             ElevatedButton.icon(
               onPressed: () {
-                // Navigate to Receive Screen
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) => const JoinRoomScreen(),
+              ),
+              );
               },
               icon: const Icon(Icons.download),
               label: const Text("Receive Files"),
@@ -84,7 +102,14 @@ class HomeScreen extends StatelessWidget {
                 leading: const Icon(Icons.history),
                 title: const Text("Transfer History"),
                 trailing: const Icon(Icons.arrow_forward_ios),
-                onTap: () {},
+               onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => const HistoryScreen(),
+                ),
+                );
+                },
               ),
             ),
 
@@ -96,7 +121,14 @@ class HomeScreen extends StatelessWidget {
                 leading: const Icon(Icons.settings),
                 title: const Text("Settings"),
                 trailing: const Icon(Icons.arrow_forward_ios),
-                onTap: () {},
+               onTap: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => const SettingsScreen(),
+                  ),
+                  );
+                  },
               ),
             ),
           ],

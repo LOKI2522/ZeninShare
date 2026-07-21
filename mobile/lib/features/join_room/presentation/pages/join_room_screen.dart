@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CreateRoomScreen extends StatelessWidget {
-  const CreateRoomScreen({super.key});
+class JoinRoomScreen extends StatelessWidget {
+  const JoinRoomScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,13 @@ class CreateRoomScreen extends StatelessWidget {
         title: const Text("Join Room"),
       ),
       body: const Center(
-        child: Text("Join Room"),
+        child: Text(
+          "Join Room Screen",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
