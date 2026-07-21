@@ -15,10 +15,16 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final SocketService socketService = SocketService();
   @override
   void initState() {
-    super.initState();
-    roomId = generateRoomId();
-    socketService.connect();
-  }
+  super.initState();
+
+  roomId = generateRoomId();
+
+  socketService.connect();
+
+  Future.delayed(const Duration(seconds: 1), () {
+    socketService.createRoom(roomId);
+  });
+}
 
   String generateRoomId() {
     final random = Random();

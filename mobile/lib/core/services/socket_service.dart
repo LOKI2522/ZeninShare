@@ -6,6 +6,8 @@ class SocketService {
   SocketService();
 
   void connect() {
+    print("connect() method called");
+
     socket = IO.io(
       'http://10.33.69.186:3000',
       <String, dynamic>{
@@ -27,5 +29,17 @@ class SocketService {
     socket.onConnectError((error) {
       print("🚫 Connection Error: $error");
     });
+  }
+
+  // Create Room
+  void createRoom(String roomId) {
+    socket.emit("create-room", roomId);
+    print("📤 Sent Room ID: $roomId");
+  }
+
+  // Join Room
+  void joinRoom(String roomId) {
+    socket.emit("join-room", roomId);
+    print("📤 Join Request Sent: $roomId");
   }
 }

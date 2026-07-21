@@ -15,6 +15,27 @@ const io = new Server(server, {
   },
 });
 
+io.on("connection", (socket) => {
+  console.log("📱 New device connected:", socket.id);
+
+  // Create Room
+  socket.on("create-room", (roomId) => {
+    socket.join(roomId);
+    console.log("🏠 Room Created:", roomId);
+  });
+
+  // Join Room
+  socket.on("join-room", (roomId) => {
+    socket.join(roomId);
+    console.log("👤 Joined Room:", roomId);
+  });
+
+  // Disconnect
+  socket.on("disconnect", () => {
+    console.log("❌ Device Disconnected:", socket.id);
+  });
+});
+
 app.get("/", (req, res) => {
   res.send("ZeninShare Server is Running...");
 });
